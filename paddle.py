@@ -1,6 +1,9 @@
 import turtle
 
 
+MOVEMENT_SPEED = 20
+
+
 class Paddle(turtle.Turtle):
     """The Paddles of the pong game."""
 
@@ -15,10 +18,10 @@ class Paddle(turtle.Turtle):
 
     def go_up(self):
         """Move the paddle up."""
-        new_y = self.ycor() + 20
+        new_y = self.ycor() + MOVEMENT_SPEED
         self.goto(x=self.xcor(), y=new_y)
 
     def go_down(self):
         """Move the paddle down."""
-        new_y = self.ycor() - 20
+        new_y = self.ycor() - MOVEMENT_SPEED
         self.goto(x=self.xcor(), y=new_y)
