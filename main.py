@@ -11,16 +11,16 @@ def main():
     screen.title("A Pong Game")
     screen.tracer(0)  # No automatic refreshing of the stuff on screen.
 
-    paddle_1 = Paddle(x_coord=350, y_coord=1)  # The first paddle
+    r_paddle = Paddle(x_coord=350, y_coord=1)  # The first paddle
 
     screen.listen()
-    screen.onkey(paddle_1.go_up, "Up")
-    screen.onkey(paddle_1.go_down, "Down")
+    screen.onkey(r_paddle.go_up, "Up")
+    screen.onkey(r_paddle.go_down, "Down")
 
     game_is_on = True
     while game_is_on:     # The main game loop.
         screen.update()   # Refresh the contents on screen.
-        time.sleep(0.02)  # The speed of the game.
+        time.sleep(0.01)  # The speed of the game.
 
     screen.exitonclick()
 
