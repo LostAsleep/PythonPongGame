@@ -1,6 +1,7 @@
 import turtle
 import time
 from paddle import Paddle
+from ball import Ball
 
 
 def main():
@@ -20,6 +21,8 @@ def main():
 
     screen.onkey(r_paddle.go_up, "Up")
     screen.onkey(r_paddle.go_down, "Down")
+
+    ball = Ball()
 
     game_is_on = True
     while game_is_on:     # The main game loop.
