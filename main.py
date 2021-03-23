@@ -11,9 +11,13 @@ def main():
     screen.title("A Pong Game")
     screen.tracer(0)  # No automatic refreshing of the stuff on screen.
 
-    r_paddle = Paddle(x_coord=350, y_coord=1)  # The first paddle
+    l_paddle = Paddle(x_coord=-350, y_coord=0)  # The left paddle.
+    r_paddle = Paddle(x_coord=350, y_coord=0)   # The right paddle.
 
-    screen.listen()
+    screen.listen()  # To enable keyboard control.
+    screen.onkey(l_paddle.go_up, "w")
+    screen.onkey(l_paddle.go_down, "s")
+
     screen.onkey(r_paddle.go_up, "Up")
     screen.onkey(r_paddle.go_down, "Down")
 
