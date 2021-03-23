@@ -1,12 +1,12 @@
-import turtle
 import time
+from turtle import Screen
 from paddle import Paddle
 from ball import Ball
 
 
 def main():
     """The main function of the pong game."""
-    screen = turtle.Screen()             # First create the game screen.
+    screen = Screen()             # First create the game screen.
     screen.setup(width=800, height=600)  # With it's dimensions.
     screen.bgcolor("black")              # Set the background color.
     screen.title("A Pong Game")
@@ -28,6 +28,7 @@ def main():
     while game_is_on:     # The main game loop.
         screen.update()   # Refresh the contents on screen.
         time.sleep(0.01)  # The speed of the game.
+        ball.initial_movement()
 
     screen.exitonclick()
 

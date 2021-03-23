@@ -1,10 +1,10 @@
-import turtle
+from turtle import Turtle
 
 
 MOVEMENT_SPEED = 20
 
 
-class Paddle(turtle.Turtle):
+class Paddle(Turtle):
     """The Paddles of the pong game."""
 
     def __init__(self, x_coord, y_coord):
