@@ -1,5 +1,6 @@
 import turtle
 import time
+from paddle import Paddle
 
 
 def main():
@@ -10,24 +11,11 @@ def main():
     screen.title("A Pong Game")
     screen.tracer(0)  # No automatic refreshing of the stuff on screen.
 
-    paddle = turtle.Turtle()  # The first paddle
-    paddle.shape("square")
-    paddle.color("white")
-    paddle.shapesize(stretch_wid=5, stretch_len=1)
-    paddle.penup()
-    paddle.goto(x=350, y=1)
-
-    def go_up():
-        new_y = paddle.ycor() + 20
-        paddle.goto(x=paddle.xcor(), y=new_y)
-
-    def go_down():
-        new_y = paddle.ycor() - 20
-        paddle.goto(x=paddle.xcor(), y=new_y)
+    paddle_1 = Paddle(x_coord=350, y_coord=1)  # The first paddle
 
     screen.listen()
-    screen.onkey(go_up, "Up")
-    screen.onkey(go_down, "Down")
+    screen.onkey(paddle_1.go_up, "Up")
+    screen.onkey(paddle_1.go_down, "Down")
 
     game_is_on = True
     while game_is_on:     # The main game loop.
