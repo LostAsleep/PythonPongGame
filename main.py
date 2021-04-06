@@ -27,15 +27,11 @@ def main():
     game_is_on = True
     while game_is_on:     # The main game loop.
         screen.update()   # Refresh the contents on screen.
-        time.sleep(0.01)  # The speed of the game.
+        time.sleep(0.1)  # The speed of the game.
         ball.move()
 
-        if ball.ycor() > 300 or ball.ycor() < -300:
-            # needs to bounce
-            pass
-
-
-
+        if ball.ycor() > 280 or ball.ycor() < -280:
+            ball.bounce()
 
 
     screen.exitonclick()

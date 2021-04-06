@@ -11,8 +11,15 @@ class Ball(Turtle):
         self.color("white")
         self.shapesize(stretch_wid=0.5, stretch_len=0.5)
         self.penup()
+        self.x_move = 10
+        self.y_move = 10
 
     def move(self):
-        new_x = self.xcor() + 10
-        new_y = self.ycor() + 10
+        """The initial movement."""
+        new_x = self.xcor() + self.x_move
+        new_y = self.ycor() + self.y_move
         self.goto(x=new_x, y=new_y)
+
+    def bounce(self):
+        """Reverse direction if wall is hit."""
+        self.y_move *= -1
