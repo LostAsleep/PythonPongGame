@@ -39,6 +39,11 @@ def main():
         # Distance of 55 seems to be the most practical to prevent multiple bounces.
         if ball.distance(r_paddle) < 55 and ball.xcor() > 320 or ball.distance(l_paddle) < 55 and ball.xcor() < -320:
             ball.bounce_x()
+            # Bounce the ball at a more acute angle if it's furthe away fromt he center of the paddle
+            if ball.distance(r_paddle) > 40 or ball.distance(l_paddle) > 40:
+                ball.y_move = 6
+            elif ball.distance(r_paddle) > 20 or ball.distance(l_paddle) > 20:
+                ball.y_move = 8
 
         # Detect when right paddle misses.
         # Reset with ball direction to the left.

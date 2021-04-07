@@ -22,8 +22,13 @@ class Ball(Turtle):
         self.goto(x=new_x, y=new_y)
 
     def bounce_y(self):
-        """Reverse y direction if wall is hit."""
+        """Reverse y direction if wall is hit.
+        Bounce at 90 degree angle."""
         self.y_move *= -1
+        if self.y_move > 0:
+            self.y_move = 10
+        if self.y_move < 0:
+            self.y_move = -10
 
     def bounce_x(self):
         """Reverse x direction if a paddle is hit and increase speed."""
@@ -34,4 +39,5 @@ class Ball(Turtle):
         """Restart with ball in opposite direction and reset speed."""
         self.goto(0, 0)
         self.move_speed = 0.1
+        self.y_move = 10
         self.bounce_x()
