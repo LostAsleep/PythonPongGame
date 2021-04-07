@@ -29,7 +29,7 @@ def main():
     game_is_on = True
     while game_is_on:     # The main game loop.
         screen.update()   # Refresh the contents on screen.
-        time.sleep(0.1)   # The speed of the game.
+        time.sleep(ball.move_speed)   # The speed of the game.
         ball.move()
 
         if ball.ycor() > 280 or ball.ycor() < -280:
