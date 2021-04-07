@@ -27,3 +27,8 @@ class Ball(Turtle):
     def bounce_x(self):
         """Reverse x direction if a paddle is hit."""
         self.x_move *= -1
+
+    def reset_position(self):
+        """Restart with ball in opposite direction"""
+        self.goto(0, 0)
+        self.bounce_x()
