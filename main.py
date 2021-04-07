@@ -32,6 +32,7 @@ def main():
         time.sleep(ball.move_speed)   # The speed of the game.
         ball.move()
 
+        # Collision with upper and lower border.
         if ball.ycor() > 280 or ball.ycor() < -280:
             ball.bounce_y()
 
