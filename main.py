@@ -35,8 +35,9 @@ def main():
         if ball.ycor() > 280 or ball.ycor() < -280:
             ball.bounce_y()
 
-        # Detect collision with paddles.
-        if ball.distance(r_paddle) < 50 and ball.xcor() > 320 or ball.distance(l_paddle) < 50 and ball.xcor() < -320:
+        # Detect collision with paddles. 
+        # Distance of 55 seems to be the most practical to prevent multiple bounces.
+        if ball.distance(r_paddle) < 55 and ball.xcor() > 320 or ball.distance(l_paddle) < 55 and ball.xcor() < -320:
             ball.bounce_x()
 
         # Detect when right paddle misses.
