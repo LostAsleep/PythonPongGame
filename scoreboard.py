@@ -2,6 +2,7 @@ from turtle import Turtle
 
 
 class Scoreboard(Turtle):
+    """The top scoreboard of the pong game."""
 
     def __init__(self):
         """Initalize the scoreboard."""
